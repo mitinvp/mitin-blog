@@ -430,6 +430,7 @@ footer {
     <li><a href="#qualification">Кваліфікація</a></li>
     <li><a href="#homeroom">КК групи</a></li>
     <li><a href="#pedagogy">Активність</a></li>
+    <li><a href="#awards">Нагороди</a></li>
     <li><a href="#interesting">Цікаве</a></li>
     <li><a href="#contact">Контакти</a></li>
   </ul>
@@ -487,6 +488,13 @@ footer {
       <div class="pills">
         <span class="pill pill-gold">↑ Претендує на «Старший викладач»</span>
         <span class="pill pill-cyan">👨‍🏫 Класний керівник · КІ 23</span>
+      </div>
+      <!-- CREDO -->
+      <div style="margin-top:1.8rem;position:relative;padding:1.5rem 1.8rem 1.5rem 3rem;background:rgba(0,201,228,0.04);border-left:3px solid var(--cyan);border-radius:0 5px 5px 0;">
+        <div style="position:absolute;top:0.8rem;left:0.9rem;font-family:'Playfair Display',serif;font-size:3rem;line-height:1;color:var(--cyan);opacity:0.35;user-select:none;">"</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.6rem;color:var(--cyan);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:0.7rem;">// Педагогічне кредо</div>
+        <p style="font-family:'Playfair Display',serif;font-size:1.08rem;color:var(--white);line-height:1.8;font-style:italic;margin:0;">Навчати — означає надихати. Моя мета як педагога — не просто передати знання, а запалити в кожному студентові <span style="color:var(--cyan);font-style:normal;font-weight:600;">прагнення думати, творити і розвиватися</span>. Технології змінюються щодня — і саме тому я вчуся разом зі своїми студентами.</p>
+        <div style="margin-top:1rem;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:var(--muted);">— Мітін Вадим Павлович</div>
       </div>
     </div>
     <div class="cisco-card">
@@ -810,11 +818,7 @@ document.addEventListener('keydown', function(e) {
         <div class="hr-desc">Регулярне проведення батьківських зборів, оперативне інформування батьків щодо успішності та поведінки студентів, вирішення поточних питань.</div>
       </div>
 
-      <div class="hr-card hr-card-accent">
-        <div class="hr-icon">🏆</div>
-        <div class="hr-title">Досягнення групи</div>
-        <div class="hr-desc">Студент групи Федоров Олександр — <strong style="color:var(--gold);">фіналіст Всеукраїнського чемпіонату «Екософт–2026» та INFOMATRIX-2026</strong> з проєктом автоматизації на базі Arduino.</div>
-      </div>
+
 
     </div>
   </div>
@@ -992,11 +996,123 @@ document.addEventListener('keydown', function(e) {
 </style>
 
 
+<!-- AWARDS -->
+<section id="awards" style="background:rgba(11,26,48,0.5);">
+  <div class="section-header reveal">
+    <span class="section-num">07</span>
+    <h2>Нагороди та відзнаки</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="reveal">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:var(--gold);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:1.5rem;">// Грамоти, подяки та відзнаки</div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;" id="awards-grid">
+
+      <div class="award-card">
+        <div class="award-ribbon">🏅</div>
+        <div class="award-body">
+          <div class="award-category">Відзнака</div>
+          <div class="award-title">Грамота керівника навчального закладу</div>
+          <div class="award-desc">За сумлінну педагогічну працю, високий професіоналізм та вагомий внесок у розвиток освітнього процесу коледжу.</div>
+          <div class="award-meta">
+            <span class="award-year">ЗАФК</span>
+            <a href="https://mitinvp.github.io/mitin-blog/award_zafk.pdf" target="_blank" class="award-link">📄 Переглянути</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="award-card award-card-cyan">
+        <div class="award-ribbon">🎖️</div>
+        <div class="award-body">
+          <div class="award-category" style="color:var(--cyan);border-color:rgba(0,201,228,0.3);background:rgba(0,201,228,0.08);">Cisco Academy</div>
+          <div class="award-title">Сертифікат інструктора Cisco Networking Academy</div>
+          <div class="award-desc">Офіційна сертифікація Cisco як інструктора мережевої академії. Право викладати курси CCNA та суміжні програми.</div>
+          <div class="award-meta">
+            <span class="award-year" style="color:var(--cyan);background:rgba(0,201,228,0.08);border-color:rgba(0,201,228,0.25);">Cisco Systems</span>
+            <a href="https://mitinvp.github.io/mitin-blog/cert_cisco.pdf" target="_blank" class="award-link">📄 Переглянути</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="award-card">
+        <div class="award-ribbon">📜</div>
+        <div class="award-body">
+          <div class="award-category">Подяка</div>
+          <div class="award-title">Подяка від Департаменту освіти і науки</div>
+          <div class="award-desc">За вагомий внесок у розвиток освіти, високий професіоналізм та сумлінну педагогічну діяльність.</div>
+          <div class="award-meta">
+            <span class="award-year">Департамент освіти</span>
+            <a href="https://mitinvp.github.io/mitin-blog/award_dept_education.pdf" target="_blank" class="award-link">📄 Переглянути</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+.award-card {
+  display: flex; gap: 1rem; align-items: flex-start;
+  background: var(--card); border: 1px solid rgba(240,165,0,0.12);
+  border-radius: 5px; padding: 1.3rem 1.4rem;
+  position: relative; overflow: hidden;
+  transition: border-color 0.25s, transform 0.2s;
+}
+.award-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(to right, var(--gold), transparent);
+}
+.award-card:hover { border-color: rgba(240,165,0,0.35); transform: translateY(-3px); }
+.award-card-cyan { border-color: rgba(0,201,228,0.12); }
+.award-card-cyan::before { background: linear-gradient(to right, var(--cyan), transparent); }
+.award-card-cyan:hover { border-color: rgba(0,201,228,0.35); }
+.award-card-add { border-style: dashed; border-color: rgba(255,255,255,0.08); }
+.award-card-add::before { display: none; }
+.award-card-add:hover { border-color: rgba(255,255,255,0.15); transform: none; }
+.award-ribbon {
+  font-size: 2rem; flex-shrink: 0;
+  width: 3rem; height: 3rem; display: flex;
+  align-items: center; justify-content: center;
+  background: rgba(240,165,0,0.08); border-radius: 50%;
+  border: 1px solid rgba(240,165,0,0.2);
+}
+.award-body { flex: 1; }
+.award-category {
+  font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem;
+  font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--gold); background: rgba(240,165,0,0.08);
+  border: 1px solid rgba(240,165,0,0.25);
+  padding: 0.15rem 0.65rem; border-radius: 100px;
+  display: inline-block; margin-bottom: 0.6rem;
+}
+.award-title { font-size: 0.97rem; font-weight: 500; color: var(--white); line-height: 1.4; margin-bottom: 0.5rem; }
+.award-desc  { font-size: 0.84rem; color: var(--muted); line-height: 1.65; margin-bottom: 0.7rem; }
+.award-meta  { display: flex; gap: 0.6rem; flex-wrap: wrap; align-items: center; }
+.award-year  {
+  font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem;
+  color: var(--gold); background: rgba(240,165,0,0.08);
+  border: 1px solid rgba(240,165,0,0.2);
+  padding: 0.15rem 0.65rem; border-radius: 100px;
+}
+.award-link {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem;
+  color: var(--cyan); text-decoration: none;
+  border: 1px solid rgba(0,201,228,0.25); border-radius: 100px;
+  padding: 0.15rem 0.65rem; background: rgba(0,201,228,0.06);
+  transition: background 0.2s;
+}
+.award-link:hover { background: rgba(0,201,228,0.15); }
+</style>
+
+
 
 <!-- CONTACT -->
 <section id="interesting">
   <div class="section-header reveal">
-    <span class="section-num">07</span><h2>Цікаве</h2><div class="section-line"></div>
+    <span class="section-num">08</span><h2>Цікаве</h2><div class="section-line"></div>
   </div>
   
     <!-- CALCULATOR -->

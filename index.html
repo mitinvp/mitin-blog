@@ -555,7 +555,7 @@ document.addEventListener('keydown', function(e) {
         <div class="pa-label">Виховний захід</div>
         <div class="pa-icon">⚔️</div>
         <div class="pa-title">Інфобатл 2026: Level Up!</div>
-        <div class="pa-desc">Командний інтелектуальний конкурс з інформатики для студентів І курсу спеціальностей «Комп'ютерні науки» та «Комп'ютерна інженерія». Захід включав 4 раунди: тест на знання ІТ, переклад з «айтішного» сленгу, «Чорна скриня» (вгадай пристрій за описом) та фінальний блок. Затверджено на засіданні циклової комісії, протокол № 7 від 07.01.2026.</div>
+        <div class="pa-desc">Командний інтелектуальний конкурс з інформатики для студентів І-ІІ курсів спеціальностей «Комп'ютерні науки» та «Комп'ютерна інженерія».</div>
         <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:0.5rem;align-items:center;">
           <div class="pa-year">Січень 2026</div>
           <div class="pa-year" style="color:var(--cyan);background:rgba(0,201,228,0.08);border-color:rgba(0,201,228,0.25);">І курс</div>
@@ -805,9 +805,21 @@ document.addEventListener('keydown', function(e) {
 
         <div style="padding:1.5rem;">
 
+          <!-- Група та предмет -->
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem;">
+            <div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:0.76rem;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.5rem;">Група <span style="color:#ff5f57;">*</span></div>
+              <input id="calc-group" type="text" placeholder="напр. КІ 23" required
+                style="width:100%;padding:0.6rem 0.8rem;background:#0b1a30;border:1px solid rgba(0,201,228,0.2);border-radius:3px;color:var(--light);font-family:'IBM Plex Mono',monospace;font-size:0.95rem;outline:none;box-sizing:border-box;">
+            </div>
+            <div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:0.76rem;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.5rem;">Предмет <span style="color:#ff5f57;">*</span></div>
+              <input id="calc-subject" type="text" placeholder="напр. Інформатика" required
+                style="width:100%;padding:0.6rem 0.8rem;background:#0b1a30;border:1px solid rgba(0,201,228,0.2);border-radius:3px;color:var(--light);font-family:'IBM Plex Mono',monospace;font-size:0.95rem;outline:none;box-sizing:border-box;">
+            </div>
+          </div>
 
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem;">
-
             <div>
               <div style="font-family:'IBM Plex Mono',monospace;font-size:0.76rem;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.5rem;">Шкала оцінювання</div>
               <div style="display:flex;gap:0.5rem;">
@@ -817,18 +829,20 @@ document.addEventListener('keydown', function(e) {
                   style="flex:1;padding:0.65rem;font-family:'IBM Plex Mono',monospace;font-size:0.84rem;border-radius:3px;cursor:pointer;background:transparent;color:var(--muted);border:1px solid rgba(0,201,228,0.25);">12-бальна</button>
               </div>
             </div>
-
             <div>
-              <div style="font-family:'IBM Plex Mono',monospace;font-size:0.76rem;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.5rem;">Кількість студентів у групі</div>
-              <input id="calc-total" type="number" min="1" max="60" value="28"
-                style="width:100%;padding:0.6rem 0.8rem;background:#0b1a30;border:1px solid rgba(0,201,228,0.2);border-radius:3px;color:var(--light);font-family:'IBM Plex Mono',monospace;font-size:1.1rem;outline:none;">
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:0.76rem;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.5rem;">Кількість студентів</div>
+              <input id="calc-total" type="number" min="1" max="99" value="" placeholder="введіть число" inputmode="numeric" oninput="this.value=this.value.replace(/[^0-9]/g,'')" style="width:100%;padding:0.6rem 0.8rem;background:#0b1a30;border:1px solid rgba(0,201,228,0.2);border-radius:3px;color:var(--light);font-family:'IBM Plex Mono',monospace;font-size:1.1rem;outline:none;box-sizing:border-box;">
             </div>
           </div>
 
+          <!-- Дата -->
+          <div style="margin-bottom:1.5rem;">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.76rem;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.5rem;">Дата / Семестр</div>
+            <input id="calc-date" type="text" placeholder="напр. І семестр 2025/2026 (необов'язково)"
+              style="width:100%;padding:0.6rem 0.8rem;background:#0b1a30;border:1px solid rgba(0,201,228,0.2);border-radius:3px;color:var(--light);font-family:'IBM Plex Mono',monospace;font-size:0.95rem;outline:none;box-sizing:border-box;">
+          </div>
 
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start;">
-
-
             <div>
               <div style="font-family:'IBM Plex Mono',monospace;font-size:0.76rem;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.8rem;">Кількість студентів за оцінками</div>
               <div id="calc-grade-rows" style="display:flex;flex-direction:column;gap:0.55rem;"></div>
@@ -839,10 +853,8 @@ document.addEventListener('keydown', function(e) {
               </button>
             </div>
 
-
             <div>
               <div id="calc-results" style="display:flex;flex-direction:column;gap:0.8rem;">
-
                 <div style="background:#0b1a30;border:1px solid rgba(0,201,228,0.08);border-radius:4px;padding:1.5rem;text-align:center;">
                   <div style="font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.5rem;">Середній бал</div>
                   <div id="cr-avg" style="font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;color:var(--cyan);">—</div>
@@ -860,9 +872,18 @@ document.addEventListener('keydown', function(e) {
                 </div>
                 <div id="cr-bars" style="background:#0b1a30;border:1px solid rgba(0,201,228,0.08);border-radius:4px;padding:1rem 1.2rem;"></div>
                 <div id="cr-verdict" style="font-family:'IBM Plex Mono',monospace;font-size:0.85rem;text-align:center;padding:0.6rem;"></div>
+
+                <!-- Export buttons -->
+                <div id="calc-export-btns" style="display:none;flex-direction:column;gap:0.5rem;border-top:1px solid rgba(0,201,228,0.1);padding-top:0.8rem;">
+                  <div style="font-family:'IBM Plex Mono',monospace;font-size:0.65rem;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.2rem;">// Вивантажити результати</div>
+                  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.5rem;">
+                    <button onclick="exportCopy()" style="padding:0.55rem 0.3rem;background:rgba(0,201,228,0.07);border:1px solid rgba(0,201,228,0.25);border-radius:3px;color:var(--cyan);font-family:'IBM Plex Mono',monospace;font-size:0.68rem;cursor:pointer;transition:background 0.2s;" onmouseover="this.style.background='rgba(0,201,228,0.15)'" onmouseout="this.style.background='rgba(0,201,228,0.07)'">📋 Копіювати</button>
+                    <button onclick="exportExcel()" style="padding:0.55rem 0.3rem;background:rgba(40,200,64,0.07);border:1px solid rgba(40,200,64,0.25);border-radius:3px;color:#28c840;font-family:'IBM Plex Mono',monospace;font-size:0.68rem;cursor:pointer;transition:background 0.2s;" onmouseover="this.style.background='rgba(40,200,64,0.15)'" onmouseout="this.style.background='rgba(40,200,64,0.07)'">📊 Excel</button>
+                    <button onclick="exportWord()" style="padding:0.55rem 0.3rem;background:rgba(240,165,0,0.07);border:1px solid rgba(240,165,0,0.25);border-radius:3px;color:var(--gold);font-family:'IBM Plex Mono',monospace;font-size:0.68rem;cursor:pointer;transition:background 0.2s;" onmouseover="this.style.background='rgba(240,165,0,0.15)'" onmouseout="this.style.background='rgba(240,165,0,0.07)'">📝 Word</button>
+                  </div>
+                </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
@@ -873,6 +894,7 @@ document.addEventListener('keydown', function(e) {
 <script>
 (function(){
   var cScale = 5;
+  var lastResult = null;
 
   var G5 = [
     {v:5, lbl:'Відмінно',          col:'#28c840'},
@@ -920,15 +942,11 @@ document.addEventListener('keydown', function(e) {
   window.calcSetScale = function(s){
     cScale = s;
     var b5=document.getElementById('cbtn5'), b12=document.getElementById('cbtn12');
-    if(s===5){
-      b5.style.cssText='flex:1;padding:0.65rem;font-family:IBM Plex Mono,monospace;font-size:0.72rem;border-radius:3px;cursor:pointer;background:var(--cyan);color:#080f1e;border:1px solid var(--cyan);font-weight:700;';
-      b12.style.cssText='flex:1;padding:0.65rem;font-family:IBM Plex Mono,monospace;font-size:0.72rem;border-radius:3px;cursor:pointer;background:transparent;color:var(--muted);border:1px solid rgba(0,201,228,0.25);';
-    } else {
-      b12.style.cssText='flex:1;padding:0.65rem;font-family:IBM Plex Mono,monospace;font-size:0.72rem;border-radius:3px;cursor:pointer;background:var(--cyan);color:#080f1e;border:1px solid var(--cyan);font-weight:700;';
-      b5.style.cssText='flex:1;padding:0.65rem;font-family:IBM Plex Mono,monospace;font-size:0.72rem;border-radius:3px;cursor:pointer;background:transparent;color:var(--muted);border:1px solid rgba(0,201,228,0.25);';
-    }
-    renderRows();
-    resetResults();
+    var on='flex:1;padding:0.65rem;font-family:IBM Plex Mono,monospace;font-size:0.72rem;border-radius:3px;cursor:pointer;background:var(--cyan);color:#080f1e;border:1px solid var(--cyan);font-weight:700;';
+    var off='flex:1;padding:0.65rem;font-family:IBM Plex Mono,monospace;font-size:0.72rem;border-radius:3px;cursor:pointer;background:transparent;color:var(--muted);border:1px solid rgba(0,201,228,0.25);';
+    b5.style.cssText = s===5 ? on : off;
+    b12.style.cssText = s===12 ? on : off;
+    renderRows(); resetResults();
   };
 
   function resetResults(){
@@ -939,11 +957,23 @@ document.addEventListener('keydown', function(e) {
     document.getElementById('cr-succ').textContent='—';
     document.getElementById('cr-bars').innerHTML='';
     document.getElementById('cr-verdict').textContent='';
+    document.getElementById('calc-export-btns').style.display='none';
+    lastResult = null;
   }
 
   window.calcRun = function(){
     var totalStudents = parseInt(document.getElementById('calc-total').value)||0;
     if(totalStudents<1){alert('Вкажіть кількість студентів!');return;}
+    var grpVal = document.getElementById('calc-group').value.trim();
+    var subVal = document.getElementById('calc-subject').value.trim();
+    if(!grpVal){ alert('Вкажіть назву групи!'); document.getElementById('calc-group').focus(); return; }
+    if(!subVal){ alert('Вкажіть назву предмету!'); document.getElementById('calc-subject').focus(); return; }
+    // Auto-fill date if empty
+    var dateEl = document.getElementById('calc-date');
+    if(!dateEl.value.trim()){
+      var now = new Date();
+      dateEl.value = now.toLocaleDateString('uk-UA');
+    }
 
     var gs = grades();
     var naCount = parseInt(document.getElementById('cg_na')?document.getElementById('cg_na').value:0)||0;
@@ -958,34 +988,30 @@ document.addEventListener('keydown', function(e) {
       var el=document.getElementById('cg_'+g.v);
       var n=parseInt(el?el.value:0)||0;
       gradeData.push({g:g,n:n});
-      sumGrades += g.v*n;
-      countGraded += n;
+      sumGrades += g.v*n; countGraded += n;
       if(g.v>=qualMin) qualCount+=n;
       if(g.v>=passMin) successCount+=n;
     });
 
-    var attended = countGraded; // грaded students
+    var attended = countGraded;
     var avg = attended>0 ? sumGrades/attended : 0;
     var qualPct = totalStudents>0 ? qualCount/totalStudents*100 : 0;
     var succPct = totalStudents>0 ? successCount/totalStudents*100 : 0;
 
-    // Avg display
     var avgEl=document.getElementById('cr-avg');
     avgEl.textContent = avg.toFixed(2);
     avgEl.style.color = avg>=(cScale*0.8)?'#28c840':avg>=(cScale*0.6)?'#00c9e4':avg>=(cScale*0.4)?'#f0a500':'#ff5f57';
-    document.getElementById('cr-avg-sub').style.fontSize='0.78rem'; document.getElementById('cr-avg-sub').textContent='з '+cScale+' балів · атест. '+attended+' з '+totalStudents;
+    document.getElementById('cr-avg-sub').style.fontSize='0.78rem';
+    document.getElementById('cr-avg-sub').textContent='з '+cScale+' балів · атест. '+attended+' з '+totalStudents;
 
-    // Quality
     var qEl=document.getElementById('cr-qual');
     qEl.textContent=qualPct.toFixed(1)+'%';
     qEl.style.color=qualPct>=70?'#28c840':qualPct>=50?'#f0a500':'#ff5f57';
 
-    // Success
     var sEl=document.getElementById('cr-succ');
     sEl.textContent=succPct.toFixed(1)+'%';
     sEl.style.color=succPct>=90?'#28c840':succPct>=70?'#f0a500':'#ff5f57';
 
-    // Bars
     var barsHtml='<div style="font-family:IBM Plex Mono,monospace;font-size:0.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.7rem;">Розподіл оцінок</div>';
     gradeData.forEach(function(d){
       var pct=totalStudents>0?d.n/totalStudents*100:0;
@@ -1008,21 +1034,225 @@ document.addEventListener('keydown', function(e) {
     }
     document.getElementById('cr-bars').innerHTML=barsHtml;
 
-    // Verdict
-    var v,vc;
-    if(succPct>=95&&qualPct>=75){v='✦ Відмінний рівень успішності групи';vc='#28c840';}
-    else if(succPct>=85&&qualPct>=55){v='◈ Хороший рівень успішності';vc='#00c9e4';}
-    else if(succPct>=70){v='▸ Задовільний рівень, є резерви зростання';vc='#f0a500';}
-    else{v='⚠ Потребує підвищеної уваги';vc='#ff5f57';}
-    document.getElementById('cr-verdict').innerHTML='<span style="color:'+vc+';">'+v+'</span>';
+    var verdict,vc;
+    if(succPct>=95&&qualPct>=75){verdict='✦ Відмінний рівень успішності групи';vc='#28c840';}
+    else if(succPct>=85&&qualPct>=55){verdict='◈ Хороший рівень успішності';vc='#00c9e4';}
+    else if(succPct>=70){verdict='▸ Задовільний рівень, є резерви зростання';vc='#f0a500';}
+    else{verdict='⚠ Потребує підвищеної уваги';vc='#ff5f57';}
+    document.getElementById('cr-verdict').innerHTML='<span style="color:'+vc+';">'+verdict+'</span>';
+
+    // Save result for export
+    lastResult = {
+      group:    document.getElementById('calc-group').value   || '—',
+      subject:  document.getElementById('calc-subject').value || '—',
+      date:     document.getElementById('calc-date').value    || new Date().toLocaleDateString('uk-UA'),
+      scale:    cScale,
+      total:    totalStudents,
+      attended: attended,
+      naCount:  naCount,
+      avg:      avg.toFixed(2),
+      qualPct:  qualPct.toFixed(1),
+      succPct:  succPct.toFixed(1),
+      verdict:  verdict,
+      grades:   gradeData
+    };
+    document.getElementById('calc-export-btns').style.display='flex';
+    // Grade count validation
+    var enteredSum = countGraded + naCount;
+    var diff = totalStudents - enteredSum;
+    var warnEl = document.getElementById('cr-warn');
+    if(!warnEl){
+      warnEl = document.createElement('div');
+      warnEl.id = 'cr-warn';
+      document.getElementById('calc-export-btns').parentNode.insertBefore(warnEl, document.getElementById('calc-export-btns'));
+    }
+    if(diff !== 0){
+      var msg = diff > 0 ? 'Не вистачає '+diff+' студ. — перевірте введені оцінки' : 'Введено на '+Math.abs(diff)+' студ. більше ніж у групі';
+      warnEl.innerHTML = '<div style="padding:0.5rem 0.8rem;background:rgba(255,95,87,0.1);border:1px solid rgba(255,95,87,0.35);border-radius:3px;font-family:IBM Plex Mono,monospace;font-size:0.72rem;color:#ff5f57;">⚠ '+msg+'</div>';
+    } else {
+      warnEl.innerHTML = '<div style="padding:0.5rem 0.8rem;background:rgba(40,200,64,0.08);border:1px solid rgba(40,200,64,0.3);border-radius:3px;font-family:IBM Plex Mono,monospace;font-size:0.72rem;color:#28c840;">✓ Кількість студентів збігається</div>';
+    }
   };
 
+  // ── EXPORT: Copy as text ────────────────────────────────────────────────
+  window.exportCopy = function(){
+    if(!lastResult) return;
+    var r = lastResult;
+    var lines = [
+      '========================================',
+      '  АНАЛІЗ УСПІШНОСТІ ГРУПИ',
+      '========================================',
+      'Група:       ' + r.group,
+      'Предмет:     ' + r.subject,
+      'Дата:        ' + r.date,
+      'Шкала:       ' + r.scale + '-бальна',
+      '----------------------------------------',
+      'Студентів:   ' + r.total + ' (атест. ' + r.attended + ', н/а ' + r.naCount + ')',
+      'Середній бал:' + r.avg + ' з ' + r.scale,
+      'Якість знань:' + r.qualPct + '%',
+      'Успішність:  ' + r.succPct + '%',
+      '----------------------------------------',
+      'Розподіл оцінок:'
+    ];
+    r.grades.forEach(function(d){
+      lines.push('  Оцінка ' + d.g.v + ' (' + d.g.lbl + '): ' + d.n + ' ос.');
+    });
+    lines.push('----------------------------------------');
+    lines.push('Висновок: ' + r.verdict);
+    lines.push('========================================');
+    var text = lines.join('\n');
+    if(navigator.clipboard){
+      navigator.clipboard.writeText(text).then(function(){
+        var btn = event.target; btn.textContent='✓ Скопійовано!';
+        setTimeout(function(){ btn.textContent='📋 Копіювати'; }, 2000);
+      });
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = text; document.body.appendChild(ta);
+      ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+      var btn = event.target; btn.textContent='✓ Скопійовано!';
+      setTimeout(function(){ btn.textContent='📋 Копіювати'; }, 2000);
+    }
+  };
+
+  // ── EXPORT: Excel (XLS via HTML table) ──────────────────────────────────
+  window.exportExcel = function(){
+    if(!lastResult) return;
+    var r = lastResult;
+    var gradeRows = r.grades.map(function(d){
+      var pct = r.total > 0 ? (d.n/r.total*100).toFixed(1) : '0.0';
+      return '<tr><td>'+d.g.v+'</td><td>'+d.g.lbl+'</td><td>'+d.n+'</td><td>'+pct+'%</td></tr>';
+    }).join('');
+    if(r.naCount>0){
+      var naPct = r.total>0?(r.naCount/r.total*100).toFixed(1):'0.0';
+      gradeRows += '<tr><td>Н/А</td><td>Не атестовано</td><td>'+r.naCount+'</td><td>'+naPct+'%</td></tr>';
+    }
+    var xls = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40">'+
+      '<head><meta charset="UTF-8"><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet>'+
+      '<x:Name>Успішність</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions>'+
+      '</x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body>'+
+      '<table border="1">'+
+      '<tr><th colspan="2" style="background:#003366;color:#fff;font-size:14pt;">Аналіз успішності групи</th></tr>'+
+      '<tr><td><b>Група</b></td><td>'+r.group+'</td></tr>'+
+      '<tr><td><b>Предмет</b></td><td>'+r.subject+'</td></tr>'+
+      '<tr><td><b>Дата / Семестр</b></td><td>'+r.date+'</td></tr>'+
+      '<tr><td><b>Шкала</b></td><td>'+r.scale+'-бальна</td></tr>'+
+      '<tr><td><b>Всього студентів</b></td><td>'+r.total+'</td></tr>'+
+      '<tr><td><b>Атестовано</b></td><td>'+r.attended+'</td></tr>'+
+      '<tr><td><b>Не атестовано (Н/А)</b></td><td>'+r.naCount+'</td></tr>'+
+      '<tr><td><b>Середній бал</b></td><td>'+r.avg+' з '+r.scale+'</td></tr>'+
+      '<tr><td><b>Якість знань</b></td><td>'+r.qualPct+'%</td></tr>'+
+      '<tr><td><b>Успішність</b></td><td>'+r.succPct+'%</td></tr>'+
+      '<tr><td><b>Висновок</b></td><td>'+r.verdict+'</td></tr>'+
+      '<tr><td colspan="2"></td></tr>'+
+      '<tr><th>Оцінка</th><th>Рівень</th><th>К-сть студентів</th><th>% від групи</th></tr>'+
+      gradeRows+
+      '</table></body></html>';
+    var blob = new Blob([xls], {type:'application/vnd.ms-excel;charset=utf-8'});
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = 'uspishnost_'+(r.group||'grupa').replace(/\s+/g,'_')+'_'+r.date.replace(/\./g,'-')+'.xls';
+    document.body.appendChild(a); a.click();
+    document.body.removeChild(a); URL.revokeObjectURL(url);
+  };
+
+  // -- EXPORT: Word --
+  window.exportWord = function(){
+    if(!lastResult){ alert('Спочатку натисніть Розрахувати'); return; }
+    var r = lastResult;
+
+    var gradeRows = '';
+    r.grades.forEach(function(d){
+      var pct = r.total>0 ? (d.n/r.total*100).toFixed(1) : '0.0';
+      gradeRows +=
+        '<tr><td style="text-align:center;font-weight:bold;border:1pt solid #ccc;">'+d.g.v+'</td>'+
+        '<td style="border:1pt solid #ccc;">'+d.g.lbl+'</td>'+
+        '<td style="text-align:center;border:1pt solid #ccc;">'+d.n+'</td>'+
+        '<td style="text-align:center;border:1pt solid #ccc;">'+pct+'%</td></tr>';
+    });
+    if(r.naCount>0){
+      var np = r.total>0 ? (r.naCount/r.total*100).toFixed(1) : '0.0';
+      gradeRows +=
+        '<tr><td style="text-align:center;color:#999;border:1pt solid #ccc;">НА</td>'+
+        '<td style="color:#999;border:1pt solid #ccc;">Не атестовано</td>'+
+        '<td style="text-align:center;color:#999;border:1pt solid #ccc;">'+r.naCount+'</td>'+
+        '<td style="text-align:center;color:#999;border:1pt solid #ccc;">'+np+'%</td></tr>';
+    }
+
+    var vc = parseFloat(r.succPct)>=95 ? '#1a7a30'
+           : parseFloat(r.succPct)>=85 ? '#0066aa'
+           : parseFloat(r.succPct)>=70 ? '#996600' : '#aa2222';
+
+    var html =
+      '<html xmlns:o="urn:schemas-microsoft-com:office:office" '+
+      'xmlns:w="urn:schemas-microsoft-com:office:word" '+
+      'xmlns="http://www.w3.org/TR/REC-html40">'+
+      '<head><meta charset="UTF-8">'+
+      '<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View>'+
+      '<w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->'+
+      '<style>'+
+        '@page{margin:2cm;}'+
+        'body{font-family:Arial,sans-serif;font-size:11pt;color:#111;}'+
+        'h1{font-size:14pt;color:#003366;margin:0 0 6pt;}'+
+        '.sub{font-size:10pt;color:#444;margin-bottom:14pt;line-height:1.6;}'+
+        'table{border-collapse:collapse;width:100%;margin-bottom:12pt;table-layout:fixed;}'+
+        'th{background:#003366;color:#fff;padding:5pt 6pt;font-size:9pt;text-align:left;border:1pt solid #003366;word-wrap:break-word;}'+
+        'td{padding:4pt 6pt;font-size:10pt;word-wrap:break-word;}'+
+        'tr:nth-child(even) td{background:#f0f4ff;}'+
+        '.stat-table td{border:1pt solid #ccc;text-align:center;padding:8pt;width:25%;}'+
+        '.stat-val{font-size:18pt;font-weight:bold;color:#0055aa;display:block;}'+
+        '.stat-lbl{font-size:8pt;color:#777;text-transform:uppercase;display:block;margin-top:2pt;}'+
+        '.verdict{padding:7pt 10pt;border-left:4pt solid '+vc+';background:#f5f5f5;font-weight:bold;color:'+vc+';font-size:11pt;margin:10pt 0;}'+
+      '</style></head><body>'+
+      '<h1>Аналіз успішності групи</h1>'+
+      '<div class="sub">'+
+        '<b>Група:</b> '+r.group+'<br>'+
+        '<b>Предмет:</b> '+r.subject+'<br>'+
+        '<b>Дата / Семестр:</b> '+r.date+'<br>'+
+        '<b>Шкала:</b> '+r.scale+'-бальна'+
+      '</div>'+
+      ''+
+      '<table style="margin-top:14pt;border-collapse:collapse;width:55%;">'+
+        '<tr><td style="padding:5pt 8pt;border:1pt solid #ccc;background:#eef2ff;font-size:10pt;color:#444;width:55%;">Середній бал (з '+r.scale+')</td>'+
+            '<td style="padding:5pt 8pt;border:1pt solid #ccc;font-size:12pt;font-weight:bold;color:#0055aa;">'+r.avg+'</td></tr>'+
+        '<tr><td style="padding:5pt 8pt;border:1pt solid #ccc;background:#eef2ff;font-size:10pt;color:#444;">Якість знань</td>'+
+            '<td style="padding:5pt 8pt;border:1pt solid #ccc;font-size:12pt;font-weight:bold;color:#cc8800;">'+r.qualPct+'%</td></tr>'+
+        '<tr><td style="padding:5pt 8pt;border:1pt solid #ccc;background:#eef2ff;font-size:10pt;color:#444;">Успішність</td>'+
+            '<td style="padding:5pt 8pt;border:1pt solid #ccc;font-size:12pt;font-weight:bold;color:#1a7a30;">'+r.succPct+'%</td></tr>'+
+        '<tr><td style="padding:5pt 8pt;border:1pt solid #ccc;background:#eef2ff;font-size:10pt;color:#444;">Атестовано</td>'+
+            '<td style="padding:5pt 8pt;border:1pt solid #ccc;font-size:12pt;font-weight:bold;color:#444;">'+r.attended+' з '+r.total+'</td></tr>'+
+      '</table>'+
+      '<table>'+
+        '<colgroup><col style="width:12%;"><col style="width:38%;"><col style="width:25%;"><col style="width:25%;"></colgroup>'+
+        '<thead><tr>'+
+          '<th>Оцінка</th><th>Рівень</th><th>Кількість</th><th>% від групи</th>'+
+        '</tr></thead>'+
+        '<tbody>'+gradeRows+'</tbody>'+
+      '</table>'+
+      '<div class="verdict">'+r.verdict+'</div>'+
+      '</body></html>';
+
+    // Filename from subject + group
+    var subj = (r.subject||'predmet').replace(/\s+/g,'_').replace(/[^\wа-яА-ЯіІїЇєЄ_]/g,'');
+    var grp  = (r.group||'grupa').replace(/\s+/g,'_').replace(/[^\wа-яА-ЯіІїЇєЄ_]/g,'');
+    var fname = subj + '_' + grp + '.doc';
+
+    var blob = new Blob([html], {type: 'application/msword'});
+    var url  = URL.createObjectURL(blob);
+    var a    = document.createElement('a');
+    a.href = url; a.download = fname; a.style.display = 'none';
+    document.body.appendChild(a); a.click();
+    document.body.removeChild(a);
+    setTimeout(function(){ URL.revokeObjectURL(url); }, 2000);
+    var btn = document.querySelector('[onclick="exportWord()"]');
+    if(btn){ var orig=btn.textContent; btn.textContent='OK Завантажено!'; setTimeout(function(){ btn.textContent=orig; },2500); }
+  };
   // Init
   document.addEventListener('DOMContentLoaded', function(){ renderRows(); });
   if(document.readyState!=='loading') renderRows();
 })();
 </script>
-</section>
 
 <style>.pub-card{display:flex;gap:1rem;align-items:flex-start;background:var(--card);border:1px solid rgba(0,201,228,0.08);border-radius:5px;padding:1.2rem 1.5rem;transition:border-color 0.25s,background 0.25s}.pub-card:hover{border-color:rgba(0,201,228,0.25);background:var(--card2)}.pub-type{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:0.3rem 0.8rem;border-radius:3px;white-space:nowrap;flex-shrink:0;margin-top:0.15rem}.pub-type-article{background:rgba(0,201,228,0.1);border:1px solid rgba(0,201,228,0.3);color:var(--cyan)}.pub-type-conf{background:rgba(240,165,0,0.1);border:1px solid rgba(240,165,0,0.3);color:var(--gold)}.pub-body{flex:1}.pub-title{font-size:1rem;font-weight:500;color:var(--white);line-height:1.5;margin-bottom:0.5rem}.pub-authors{font-size:0.88rem;color:var(--muted);margin-bottom:0.4rem}.pub-me{color:var(--light);font-weight:500}.pub-venue{font-size:0.84rem;color:var(--muted);line-height:1.6;margin-bottom:0.5rem;font-style:italic}.pub-meta{display:flex;gap:0.8rem;flex-wrap:wrap;align-items:center}.pub-year{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:var(--cyan);background:rgba(0,201,228,0.08);border:1px solid rgba(0,201,228,0.2);padding:0.15rem 0.7rem;border-radius:100px}.pub-isbn{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:var(--muted);border:1px solid rgba(255,255,255,0.08);padding:0.15rem 0.7rem;border-radius:100px}.activity-card{background:var(--card);border:1px solid rgba(240,165,0,0.1);border-radius:5px;padding:1.3rem;transition:border-color 0.25s,transform 0.25s;position:relative;overflow:hidden}.activity-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--gold),transparent)}.activity-card:hover{border-color:rgba(240,165,0,0.3);transform:translateY(-3px)}.activity-icon{font-size:1.6rem;margin-bottom:0.7rem}.activity-title{font-size:0.95rem;font-weight:500;color:var(--white);line-height:1.4;margin-bottom:0.5rem}.activity-desc{font-size:0.84rem;color:var(--muted);line-height:1.6;margin-bottom:0.8rem}.activity-year{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;color:var(--gold);background:rgba(240,165,0,0.08);border:1px solid rgba(240,165,0,0.25);padding:0.15rem 0.7rem;border-radius:100px;display:inline-block}.activity-card-gold{border-color:rgba(240,165,0,0.25) !important;background:linear-gradient(145deg,var(--card),#0f2010)}.activity-card-gold::before{background:linear-gradient(to right,var(--gold),#28c840,transparent) !important}</style>
 
